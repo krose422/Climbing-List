@@ -1,0 +1,189 @@
+@import "../css/vendor/bourbon/bourbon";
+@import "../css/vendor/neat/neat";
+
+/* DECLARATIONS
+---------------- */
+
+$darkgrey: #303236;
+$grey: #686E75;
+$blue: #9BAAC1;
+$purple: #82787B;
+$light: #E4F1DB;
+$green: #AAC19B;
+$background: #FAFAFA;
+
+$bitter:'Bitter', serif;
+$raleway: 'Raleway', sans-serif;
+
+/* MIXINS
+---------- */
+
+@mixin border ($color) {
+  border: 1px solid $color;
+  border-radius: 4px;
+}
+
+@mixin transition() {
+  transition: .3s all ease;
+}
+
+/* GLOBAL STYLES
+---------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  color: $darkgrey;
+  font-family: $raleway;
+  background-color: $background;
+}
+
+input, button {
+  border: none;
+  @include border($light);
+  border-radius: 2px;
+  @include transition();
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+
+  &:hover {
+    // text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+/* HEADER & NAV BAR
+---------- */
+
+header {
+  background-color: $grey;
+  width: 100%;
+  height: 70px;
+
+  .innerheader {
+    width: 80%;
+    margin: auto;
+
+    .logo {
+      overflow: hidden;
+      display: inline-block;
+      padding: 13px 0;
+
+      a {
+        float: left;
+        font-family: $bitter;
+        font-size: 3em;
+        color: $green;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    nav {
+      float: right;
+
+    }
+  }
+}
+
+/* MAIN PAGE
+------------- */
+
+.main {
+  h2 {
+    float: left;
+  }
+
+  .add {
+    overflow: hidden;
+    background-color: $green;
+    @include border($green);
+    float: right;
+    margin: 2em;
+    padding: .5em;
+    i {
+      display: inline;
+      font-size: 1.5em;
+    }
+    p {
+      display: inline;
+      margin: .8em;
+    }
+    a {
+      font-size: 2em;
+      color: $light;
+    }
+  }
+
+  .allroutes {
+    clear: both;
+    @include outer-container;
+    @include border(#EDEEEE);
+    padding: 1em;
+    margin: 1em;
+    background-color: white;
+
+    .left-info {
+      @include span-columns(3);
+      overflow: hidden;
+
+      .routename {
+        display: inline-block;
+      }
+      .routeimage {
+        width: 10em;
+        height: 10em;
+        overflow: hidden;
+        margin: 10px;
+        position: relative;
+
+        img {
+          position: absolute;
+          left: -100%;
+          right: -100%;
+          top: -100%;
+          bottom: -100%;
+          margin: auto;
+          height: auto;
+          width: auto;
+        }
+      }
+    }
+
+    .right-info {
+      @include span-columns(9);
+      overflow: hidden;
+
+      p {
+        color: $darkgrey;
+        margin-bottom: .5em;
+        // display: inline-block;
+      }
+      span {
+        color: $blue;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+/* DECLARATIONS
+---------------- */
+/* MIXINS
+---------- */
+/* GLOBAL STYLES
+---------------- */
+* {
+  box-sizing: border-box; }
+
+body {
+  font-size: 62.5%;
+  color: #303236;
+  font-family: "Raleway", sans-serif;
+  background-color: #FAFAFA; }
+
+input, button {
+  border: none;
+  border: 1px solid #E4F1DB;
+  border-radius: 4px;
+  border-radius: 2px;
+  transition: .3s all ease; }
+  input:focus, button:focus {
+    outline: none; }
+
+.container {
+  width: 100%;
+  margin: auto; }
+
+a {
+  text-decoration: none;
+  color: #9BAAC1; }
+
+ul {
+  list-style: none; }
+
+/* HEADER & NAV BAR
+---------- */
+header {
+  background-color: #686E75;
+  width: 100%;
+  height: 70px; }
+  header .innerheader {
+    width: 80%;
+    margin: auto; }
+    header .innerheader .logo {
+      overflow: hidden;
+      display: inline-block;
+      padding: 13px 0; }
+      header .innerheader .logo a {
+        float: left;
+        font-family: "Bitter", serif;
+        font-size: 3em;
+        color: #AAC19B; }
+        header .innerheader .logo a:hover {
+          text-decoration: none; }
+    header .innerheader nav {
+      float: right; }
+
+/* MAIN PAGE
+------------- */
+.main h2 {
+  float: left; }
+
+.main .add {
+  overflow: hidden;
+  background-color: #AAC19B;
+  border: 1px solid #AAC19B;
+  border-radius: 4px;
+  float: right;
+  margin: 2em;
+  padding: .5em; }
+  .main .add i {
+    display: inline;
+    font-size: 1.5em; }
+  .main .add p {
+    display: inline;
+    margin: .8em; }
+  .main .add a {
+    font-size: 2em;
+    color: #E4F1DB; }
+
+.main .allroutes {
+  clear: both;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #EDEEEE;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 1em;
+  background-color: white; }
+  .main .allroutes::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .main .allroutes .left-info {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    overflow: hidden; }
+    .main .allroutes .left-info:last-child {
+      margin-right: 0; }
+    .main .allroutes .left-info .routename {
+      display: inline-block; }
+    .main .allroutes .left-info .routeimage {
+      width: 10em;
+      height: 10em;
+      overflow: hidden;
+      margin: 10px;
+      position: relative; }
+      .main .allroutes .left-info .routeimage img {
+        position: absolute;
+        left: -100%;
+        right: -100%;
+        top: -100%;
+        bottom: -100%;
+        margin: auto;
+        height: auto;
+        width: auto; }
+  .main .allroutes .right-info {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%;
+    overflow: hidden; }
+    .main .allroutes .right-info:last-child {
+      margin-right: 0; }
+    .main .allroutes .right-info p {
+      color: #303236;
+      margin-bottom: .5em; }
+    .main .allroutes .right-info span {
+      color: #9BAAC1;
+      font-weight: bold; }

@@ -1,0 +1,35 @@
+<section class="main">
+
+  <!-- <h2>Your Climbing Ticklist</h2> -->
+
+  <div class="add">
+    <a href="#/addroute"><i class="fa fa-plus-circle"></i><p class="addroute-btn" id="addroute-btn">Add route</p></a>
+  </div>
+
+  <ul>
+    <a href="#/"><li class="allroutes" ng-repeat="r in routeList" data-id="{{r.objectId}}">
+
+      <div class="left-info">
+
+        <div class="routeimage">
+          <img ng-src=" {{ r.image }} ">
+        </div>
+
+
+      </div>
+
+      <div class="right-info">
+        <h4 class="routename"> {{ r.routename }} </h4>
+        <h6>{{ r.type }}, {{ r.grade }}</h6>
+
+        <p>Type: <span>{{ r.type }}</span></p>
+        <!-- <p>Grade: <span>{{ r.grade }}</span></p> -->
+        <p>State: <span>{{ r.state }}</span></p>
+        <p>Climbing area: <span>{{ r.area }}</span></p>
+        <p id="delete-route" ng-click="deleteRoute()">Delete</p>
+      </div>
+
+    </li></a>
+  </ul>
+
+</section>
