@@ -3,32 +3,34 @@
   'use strict';
 
   angular.module('ClimbingRoutes')
-    .controller('User', ['$scope', '$http', 'PARSE', '$location',
+    .controller('User', ['$scope', '$location', 'RouteService',
 
-      function ($scope, $http, PARSE, $location) {
+      function ($scope, $location, RouteService) {
 
-        // Route constructor
-        var User = function (options) {
-          this.username = options.username;
-          this.password = options.password;
-        };
-
-        // Add route method
-        $scope.addUser = function (u) {
-
-          var user = new User(u);
-
-          $http.post(PARSE.URL + 'users/', user, PARSE.CONFIGHEADERS)
-
-          .success (function () {
+        $scope.addUser = function (user) {
+          RouteService.addUser(user).success (function () {
+            Cookies.set('sessionToken', user.sessionToken);
+            Cookies.set('username', user.username);
             console.log('registered');
-
+            $location.path('/');
+            $scope.car = {};
           })
+        }
 
-        };
-
+        $scope.loginUser = function (user) {
+          RouteService.loginUser(user).success (function () {
+            Cookies.set('sessionToken', user.sessionToken);
+            Cookies.set('username', user.username);
+            var cookies = Cookies.get('sessionToken', user.sessionToken);
+            console.log(cookies);
+            console.log('logged in');
+            $location.path('/');
+            $scope.car = {};
+          })
+        }
 
       }
+
     ])
 
 

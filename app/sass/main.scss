@@ -115,6 +115,21 @@ header {
     float: left;
   }
 
+  .logout-btn {
+    float: right;
+    padding: 10px;
+    margin: 1.2em 0;
+    background-color: $purple;
+    @include border($purple);
+    color: $light;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $grey;
+      @include border($grey);
+    }
+  }
+
   .add {
     overflow: hidden;
     background-color: $green;
@@ -122,6 +137,11 @@ header {
     float: right;
     margin: 2em;
     padding: .5em;
+
+    &:hover {
+      background-color: $blue;
+      @include border($blue);
+    }
     i {
       display: inline;
       font-size: 1.5em;

@@ -69,6 +69,20 @@ header {
 .main h2 {
   float: left; }
 
+.main .logout-btn {
+  float: right;
+  padding: 10px;
+  margin: 1.2em 0;
+  background-color: #82787B;
+  border: 1px solid #82787B;
+  border-radius: 4px;
+  color: #E4F1DB;
+  cursor: pointer; }
+  .main .logout-btn:hover {
+    background-color: #686E75;
+    border: 1px solid #686E75;
+    border-radius: 4px; }
+
 .main .add {
   overflow: hidden;
   background-color: #AAC19B;
@@ -77,6 +91,10 @@ header {
   float: right;
   margin: 2em;
   padding: .5em; }
+  .main .add:hover {
+    background-color: #9BAAC1;
+    border: 1px solid #9BAAC1;
+    border-radius: 4px; }
   .main .add i {
     display: inline;
     font-size: 1.5em; }

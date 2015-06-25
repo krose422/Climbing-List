@@ -2,24 +2,29 @@
 
   <!-- <h2>Your Climbing Ticklist</h2> -->
 
+  <p ng-click="logoutUser()" class="logout-btn">Logout</p>
   <div class="add">
     <a href="#/addroute"><i class="fa fa-plus-circle"></i><p class="addroute-btn" id="addroute-btn">Add route</p></a>
   </div>
 
-  <ul>
-    <a href="#/"><li class="allroutes" ng-repeat="r in routeList" data-id="{{r.objectId}}">
 
+  <ul>
+    <li class="allroutes" ng-repeat="r in routeList" data-id="{{r.objectId}}">
       <div class="left-info">
+      <a href="#/route/{{ r. objectId }}">
 
         <div class="routeimage">
           <img ng-src=" {{ r.image }} ">
         </div>
 
-
+      </a>
       </div>
 
+
       <div class="right-info">
-        <h4 class="routename"> {{ r.routename }} </h4>
+        <a href="#/route/{{ r. objectId }}">
+          <h4 class="routename"> {{ r.routename }} </h4>
+        </a>
         <h6>{{ r.routetype }}, {{ r.grade }}</h6>
 
         <!-- <p>Grade: <span>{{ r.grade }}</span></p> -->
@@ -28,7 +33,7 @@
         <p id="delete-route" ng-click="deleteRoute(r)">Delete</p>
       </div>
 
-    </li></a>
+    </li>
   </ul>
 
 </section>
