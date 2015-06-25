@@ -43,4 +43,21 @@
       }
     ]);
 
+    // .run(['$rootScope', '$location',
+    //   function ($rootScope, $location) {
+
+    //     $rootScope.$on('$routeChangeStart', function() {
+
+    //       var LoggedIn = Cookies.get('sessionToken') !== undefined;
+    //         if (LoggedIn) {
+    //           $location.path('/');
+    //         } else {
+    //           $location.path('/login');
+    //         }
+    //     });
+
+    //   }
+    // ]);
+
+
 }());

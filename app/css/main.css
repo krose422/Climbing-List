@@ -23,7 +23,7 @@ body {
 
 input, button {
   border: none;
-  border: 1px solid #E4F1DB;
+  border: 1px solid #F1FFE8;
   border-radius: 4px;
   border-radius: 2px;
   transition: .3s all ease; }
@@ -36,7 +36,7 @@ input, button {
 
 a {
   text-decoration: none;
-  color: #9BAAC1; }
+  color: #AB8387; }
 
 ul {
   list-style: none; }
@@ -70,17 +70,18 @@ header {
   float: left; }
 
 .main .logout-btn {
-  float: right;
+  cursor: pointer;
+  text-align: center;
   padding: 10px;
-  margin: 1.2em 0;
-  background-color: #82787B;
-  border: 1px solid #82787B;
+  border: 1px solid #686E75;
   border-radius: 4px;
-  color: #E4F1DB;
-  cursor: pointer; }
+  background-color: #686E75;
+  color: #F1FFE8;
+  float: right;
+  margin: 1.2em 0; }
   .main .logout-btn:hover {
-    background-color: #686E75;
-    border: 1px solid #686E75;
+    background-color: #303236;
+    border: 1px solid #303236;
     border-radius: 4px; }
 
 .main .add {
@@ -103,28 +104,50 @@ header {
     margin: .8em; }
   .main .add a {
     font-size: 2em;
-    color: #E4F1DB; }
+    color: #F1FFE8; }
 
 .main .allroutes {
+  overflow: hidden;
   clear: both;
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
   border: 1px solid #EDEEEE;
   border-radius: 4px;
   padding: 1em;
   margin: 1em;
   background-color: white; }
-  .main .allroutes::after {
-    clear: both;
-    content: "";
-    display: table; }
+  .main .allroutes .fa {
+    float: left;
+    padding: 8px;
+    font-size: 1.3em;
+    color: #303236;
+    transition: .3s all ease; }
+    .main .allroutes .fa:hover {
+      color: #AAC19B; }
+  .main .allroutes .fa-minus-square:hover {
+    color: #C8484C; }
+  .main .allroutes .hide {
+    display: none; }
+  .main .allroutes .top h4 {
+    font-family: "Raleway", sans-serif;
+    display: inline-block;
+    float: left; }
+  .main .allroutes .top .route-location {
+    display: inline-block;
+    float: right; }
+  .main .allroutes .bottom {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    .main .allroutes .bottom::after {
+      clear: both;
+      content: "";
+      display: table; }
   .main .allroutes .left-info {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 23.23176%;
-    overflow: hidden; }
+    overflow: hidden;
+    clear: both; }
     .main .allroutes .left-info:last-child {
       margin-right: 0; }
     .main .allroutes .left-info .routename {
@@ -149,12 +172,52 @@ header {
     display: block;
     margin-right: 2.35765%;
     width: 74.41059%;
+    display: inline-block;
+    float: left;
     overflow: hidden; }
     .main .allroutes .right-info:last-child {
       margin-right: 0; }
+    .main .allroutes .right-info .route-type {
+      display: inline-block;
+      float: left; }
+    .main .allroutes .right-info .see-more {
+      display: inline-block;
+      float: left;
+      margin-left: 20px; }
+    .main .allroutes .right-info .route-beta {
+      clear: both; }
     .main .allroutes .right-info p {
       color: #303236;
       margin-bottom: .5em; }
     .main .allroutes .right-info span {
       color: #9BAAC1;
       font-weight: bold; }
+    .main .allroutes .right-info .delete-route {
+      cursor: pointer;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #C8484C;
+      border-radius: 4px;
+      background-color: #C8484C;
+      color: #F1FFE8;
+      float: right;
+      margin-left: 1em; }
+      .main .allroutes .right-info .delete-route:hover {
+        background-color: #96363A;
+        border: 1px solid #96363A;
+        border-radius: 4px; }
+    .main .allroutes .right-info .edit-route {
+      cursor: pointer;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #9BAAC1;
+      border-radius: 4px;
+      background-color: #9BAAC1;
+      color: #F1FFE8;
+      float: right; }
+      .main .allroutes .right-info .edit-route a {
+        color: #F1FFE8; }
+      .main .allroutes .right-info .edit-route:hover {
+        background-color: #808DA1;
+        border: 1px solid #808DA1;
+        border-radius: 4px; }

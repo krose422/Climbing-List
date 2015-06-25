@@ -31,6 +31,7 @@
           this.completed = false;
           this.tripnotes = '';
           this.mplink = mplinkChange(options.routename);
+          this.beta = options.beta;
         };
 
         // Get all routes
@@ -43,6 +44,15 @@
           var deleteURL = endpoint + routeToDelete.objectId;
           return $http.delete(deleteURL, PARSE.CONFIGHEADERS);
         };
+
+        // Edit/Tick single route
+        this.editRoute = function (routeToEdit) {
+          var id = routeToEdit.objectId;
+          console.log(id);
+          var editURL = endpoint + id;
+          console.log(editURL);
+          return $http.put(editURL, routeToEdit, PARSE.CONFIGHEADERS);
+        }
 
         // Add a new route
         this.addRoute = function (newRoute) {

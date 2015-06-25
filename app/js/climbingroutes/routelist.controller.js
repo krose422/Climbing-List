@@ -32,6 +32,19 @@
           })
         }
 
+        $scope.expand = function () {
+          $(event.target).siblings().not('.top').toggleClass('hide');
+          $(event.target).toggleClass('hide');
+        };
+
+        $scope.completed = function (boolean) {
+          if (boolean === false) {
+            return 'No';
+          } else {
+            return 'Yes'
+          }
+        };
+
       }
     ]);
 

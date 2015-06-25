@@ -5,10 +5,13 @@
 ---------------- */
 
 $darkgrey: #303236;
+$red: #C8484C;
+$darkred: #96363A;
 $grey: #686E75;
 $blue: #9BAAC1;
-$purple: #82787B;
-$light: #E4F1DB;
+$darkblue: #808DA1;
+$purple: #AB8387;
+$light: #F1FFE8;
 $green: #AAC19B;
 $background: #FAFAFA;
 
@@ -25,6 +28,17 @@ $raleway: 'Raleway', sans-serif;
 
 @mixin transition() {
   transition: .3s all ease;
+}
+
+@mixin button($color) {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  @include border($color);
+  background-color: $color;
+  color: $light;
+  // width: 5em;
+  // float: right;
 }
 
 /* GLOBAL STYLES
@@ -60,7 +74,7 @@ input, button {
 
 a {
   text-decoration: none;
-  color: $blue;
+  color: $purple;
 
   &:hover {
     // text-decoration: underline;
@@ -116,17 +130,13 @@ header {
   }
 
   .logout-btn {
+    @include button($grey);
     float: right;
-    padding: 10px;
     margin: 1.2em 0;
-    background-color: $purple;
-    @include border($purple);
-    color: $light;
-    cursor: pointer;
 
     &:hover {
-      background-color: $grey;
-      @include border($grey);
+      background-color: $darkgrey;
+      @include border($darkgrey);
     }
   }
 
@@ -157,16 +167,52 @@ header {
   }
 
   .allroutes {
+    overflow: hidden;
     clear: both;
-    @include outer-container;
     @include border(#EDEEEE);
     padding: 1em;
     margin: 1em;
     background-color: white;
 
+    .fa {
+      float: left;
+      padding: 8px;
+      font-size: 1.3em;
+      color: $darkgrey;
+      @include transition;
+      &:hover {
+        color: $green;
+      }
+    }
+
+    .fa-minus-square:hover {
+      color: $red;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .top {
+      h4 {
+        font-family: $raleway;
+        display: inline-block;
+        float: left;
+      }
+      .route-location {
+        display: inline-block;
+        float: right;
+      }
+    }
+
+    .bottom {
+      @include outer-container;
+    }
+
     .left-info {
       @include span-columns(3);
       overflow: hidden;
+      clear: both;
 
       .routename {
         display: inline-block;
@@ -193,7 +239,24 @@ header {
 
     .right-info {
       @include span-columns(9);
+      display: inline-block;
+      float: left;
       overflow: hidden;
+
+      .route-type {
+        display: inline-block;
+        float: left;
+      }
+
+      .see-more {
+        display: inline-block;
+        float: left;
+        margin-left: 20px;
+      }
+
+      .route-beta {
+        clear: both;
+      }
 
       p {
         color: $darkgrey;
@@ -203,6 +266,30 @@ header {
       span {
         color: $blue;
         font-weight: bold;
+      }
+
+      .delete-route {
+        @include button($red);
+        float: right;
+        margin-left: 1em;
+
+        &:hover {
+          background-color: $darkred;
+          @include border($darkred);
+        }
+      }
+
+      .edit-route {
+        @include button($blue);
+        float: right;
+        a {
+          color: $light;
+        }
+
+        &:hover {
+          background-color: $darkblue;
+          @include border($darkblue);
+        }
       }
     }
   }

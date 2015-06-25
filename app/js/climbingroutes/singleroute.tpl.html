@@ -8,6 +8,13 @@
   <p>{{ route.grade }}</p>
   <p>{{ route.routetype }}</p>
 
-<!--   <a href="http://www.mountainproject.com/scripts/Search?query= {{ route.mplink }} &Submit=Search">Find it on Mountain Project</a> -->
+  <!-- <p ng-click="editRoute(route)">edit</p> -->
+
+  <form ng-submit="editRoute(route)">
+    Completed Climb?<input type="checkbox" [ng-true-value="true"] [ng-false-value="false"] id="" placeholder="Completed" ng-model="route.completed">
+    <input type="text" id="" placeholder="Trip and/or climb notes" ng-model="route.tripnotes">
+    <button>Update Ticklist</button>
+  </form>
+
 
 </section>

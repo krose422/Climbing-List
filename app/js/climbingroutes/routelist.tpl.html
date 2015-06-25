@@ -10,30 +10,40 @@
 
   <ul>
     <li class="allroutes" ng-repeat="r in routeList" data-id="{{r.objectId}}">
-      <div class="left-info">
-      <a href="#/route/{{ r. objectId }}">
+      <!-- <div class="expand" ng-click="expand()"> -->
+      <i class="fa fa-plus-square" ng-click="expand()"></i>
+      <i class="fa fa-minus-square hide" ng-click="expand()"></i>
 
-        <div class="routeimage">
-          <img ng-src=" {{ r.image }} ">
-        </div>
+      <!-- </div> -->
 
-      </a>
+      <div class="top">
+        <h4 class="route-name"> {{ r.routename }} </h4>
+        <p class="route-location"><a href="http://www.mountainproject.com/scripts/Search?query={{ r.area }}&Submit=Search" target="_blank">{{ r.area }}</a> | {{ r.state }}</p>
       </div>
 
+      <div class="bottom hide">
+        <div class="left-info">
+          <div class="routeimage">
+            <img ng-src=" {{ r.image }} ">
+          </div>
+        </div>
 
-      <div class="right-info">
-        <a href="#/route/{{ r. objectId }}">
-          <h4 class="routename"> {{ r.routename }} </h4>
-        </a>
-        <h6>{{ r.routetype }}, {{ r.grade }}</h6>
-
-        <!-- <p>Grade: <span>{{ r.grade }}</span></p> -->
-        <p>State: <span>{{ r.state }}</span></p>
-        <p>Climbing area: <span>{{ r.area }}</span></p>
-        <p id="delete-route" ng-click="deleteRoute(r)">Delete</p>
+        <div class="right-info">
+          <p class="route-type">{{ r.routetype }}, {{ r.grade }}</p>
+          <p class="see-more"><a href="#/route/{{ r.objectId }}">See more information.</a></p>
+          <p class="route-beta">{{ r.beta }}</p>
+          <p>Completed: {{ completed(r.completed) }}</p>
+          <p class="mp-search"><a href="http://www.mountainproject.com/scripts/Search?query={{ r.mplink }}&Submit=Search" target="_blank">Search on Mountain Project</a>
+          <p class="delete-route" ng-click="deleteRoute(r)">Delete</p>
+          <p class="edit-route"><a href="#/route/{{ r.objectId }}">Edit / Tick</a></p>
+        </div>
       </div>
 
     </li>
   </ul>
 
 </section>
+
+
+<!-- <a href="#/route/{{ r. objectId }}">
+</a> -->
