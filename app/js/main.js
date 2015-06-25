@@ -25,6 +25,11 @@
         .when('/addroute', {
           controller: 'Route',
           templateUrl: 'js/climbingroutes/addroute.tpl.html'
+        })
+
+        .when('/login', {
+          controller: 'User',
+          templateUrl: 'js/climbingroutes/login.tpl.html'
         });
 
       }

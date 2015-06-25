@@ -25,8 +25,7 @@
           var route = new Route(r);
 
           $http.post(PARSE.URL + 'classes/Routes', route, PARSE.CONFIGHEADERS)
-
-          .success (function () {
+            .success (function () {
             console.log('added');
 
           })

@@ -15,10 +15,15 @@
             console.log($scope.routeList);
           })
 
-        // deletePost = function () {
+        $scope.deletePost = function (postToDelete) {
+          var idToDelete = postToDelete.objectId;
 
-        //   $http.delete(PARSE.URL + 'classes/Routes' + objectId)
-        // }
+
+          $http.delete(PARSE.URL + 'classes/Routes/' + postToDelete.objectId, PARSE.CONFIGHEADERS)
+            .success(function () {
+              $scope.routeList = _.without($scope.routeList, postToDelete);
+            })
+        }
 
       }
     ]);
