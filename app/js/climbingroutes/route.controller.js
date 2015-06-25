@@ -17,7 +17,10 @@
           this.area = options.area;
           this.image = options.image;
           this.pitches = options.pitches;
+          this.completed = false;
+          this.tripnotes = '';
         };
+
 
         // Add route method
         $scope.addRoute = function (r) {
