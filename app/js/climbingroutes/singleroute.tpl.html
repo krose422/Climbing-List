@@ -16,14 +16,19 @@
       <div class="right-side">
         <p>{{ route.routetype }} | {{ route.grade }}</p>
         <p>{{ route.beta }}</p>
+        <p class="mp-search"><a href="http://www.mountainproject.com/scripts/Search?query={{ route.mplink }}&Submit=Search" target="_blank">Search on Mountain Project</a></p>
+        <div class="back-button">
+          <p><a href="#/">Home</a></p>
+        </div>
       </div>
+
+
     </div>
   </div>
 
 
 
   <!-- <p ng-click="editRoute(route)">edit</p> -->
-
   <form class="edit-route" ng-submit="editRoute(route)">
     <h3>Add Climb to Ticklist</h3>
     <div class="check">
@@ -35,7 +40,7 @@
       </label>
     </div>
     <button>Update Ticklist</button>
+    <p class="updated-notice"></p>
   </form>
-
 
 </section>

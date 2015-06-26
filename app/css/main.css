@@ -73,6 +73,42 @@ header {
     header .innerheader nav {
       float: right; }
 
+.ticklist-btn {
+  display: inline-block;
+  float: right;
+  margin: 2em 0; }
+  .ticklist-btn p {
+    margin-bottom: 0; }
+  .ticklist-btn a {
+    color: #F1FFE8; }
+
+.sub-nav {
+  padding: 0;
+  margin-top: 1em;
+  border-top: 1px solid #686E75;
+  border-bottom: 1px solid #686E75; }
+  .sub-nav .active {
+    background-color: #9BAAC1;
+    padding: .5em;
+    color: #F1FFE8; }
+  .sub-nav dt {
+    padding: .5em; }
+  .sub-nav dd {
+    padding: .5em;
+    cursor: pointer; }
+    .sub-nav dd a {
+      padding: 0; }
+  .sub-nav dd:hover {
+    background-color: #9BAAC1;
+    color: #F1FFE8; }
+    .sub-nav dd:hover a {
+      color: #F1FFE8;
+      padding: 0; }
+  .sub-nav dd.active a {
+    background-color: #9BAAC1;
+    color: #F1FFE8;
+    padding: 0; }
+
 /* MAIN PAGE
 ------------- */
 .main h2 {
@@ -87,7 +123,7 @@ header {
   background-color: #686E75;
   color: #F1FFE8;
   float: right;
-  margin: 1.2em 0; }
+  margin: 0 1em 1.2em 0; }
   .main .logout-btn:hover {
     background-color: #303236;
     border: 1px solid #303236;
@@ -99,7 +135,7 @@ header {
   border: 1px solid #AAC19B;
   border-radius: 4px;
   float: right;
-  margin: 2em;
+  margin: 0 2em 2em 0;
   padding: .5em; }
   .main .add:hover {
     background-color: #809175;
@@ -123,6 +159,11 @@ header {
   padding: 1em;
   margin: 1em;
   background-color: white; }
+  .main .allroutes .check {
+    display: inline-block; }
+    .main .allroutes .check p {
+      display: inline-block;
+      margin-right: 1em; }
   .main .allroutes .fa {
     float: left;
     padding: 8px;
@@ -139,9 +180,13 @@ header {
     font-family: "Raleway", sans-serif;
     display: inline-block;
     float: left; }
-  .main .allroutes .top .route-location {
-    display: inline-block;
+  .main .allroutes .top .top-right {
+    overflow: hidden;
     float: right; }
+    .main .allroutes .top .top-right .route-location {
+      margin-bottom: .2em; }
+    .main .allroutes .top .top-right .route-type {
+      margin-bottom: 0; }
   .main .allroutes .bottom {
     max-width: 68em;
     margin-left: auto;
@@ -162,14 +207,20 @@ header {
     .main .allroutes .left-info .routename {
       display: inline-block; }
     .main .allroutes .left-info .routeimage {
-      width: 15em;
-      height: 15em;
+      width: 12em;
+      height: 12em;
       overflow: hidden;
       margin: 10px;
       position: relative; }
       .main .allroutes .left-info .routeimage img {
-        width: 100%;
-        position: absolute; }
+        position: absolute;
+        left: -100%;
+        right: -100%;
+        top: -100%;
+        bottom: -100%;
+        margin: auto;
+        height: auto;
+        width: auto; }
   .main .allroutes .right-info {
     float: left;
     display: block;
@@ -180,9 +231,13 @@ header {
     overflow: hidden; }
     .main .allroutes .right-info:last-child {
       margin-right: 0; }
-    .main .allroutes .right-info .route-type {
-      display: inline-block;
-      float: left; }
+    .main .allroutes .right-info form button {
+      padding: 2px 3px;
+      margin-left: .6em; }
+      .main .allroutes .right-info form button:hover {
+        background-color: #809175;
+        border: 1px solid #809175;
+        border-radius: 4px; }
     .main .allroutes .right-info .see-more {
       display: inline-block;
       float: left;
@@ -195,6 +250,8 @@ header {
     .main .allroutes .right-info span {
       color: #C8484C;
       font-weight: bold; }
+    .main .allroutes .right-info .completed {
+      color: #AAC19B; }
     .main .allroutes .right-info .delete-route {
       cursor: pointer;
       text-align: center;
@@ -203,13 +260,15 @@ header {
       border-radius: 4px;
       background-color: #C8484C;
       color: #F1FFE8;
+      opacity: .6;
       float: right;
-      margin-left: 1em; }
+      margin-left: 1em;
+      padding: 3px;
+      margin-bottom: 0; }
       .main .allroutes .right-info .delete-route:hover {
-        background-color: #96363A;
-        border: 1px solid #96363A;
-        border-radius: 4px; }
+        opacity: 1; }
     .main .allroutes .right-info .edit-route {
+      opacity: .6;
       cursor: pointer;
       text-align: center;
       padding: 10px;
@@ -221,9 +280,7 @@ header {
       .main .allroutes .right-info .edit-route a {
         color: #F1FFE8; }
       .main .allroutes .right-info .edit-route:hover {
-        background-color: #808DA1;
-        border: 1px solid #808DA1;
-        border-radius: 4px; }
+        opacity: 1; }
 
 /* SINGLE PAGE VIEW
 -------------------- */
@@ -275,6 +332,24 @@ header {
         width: 65.88078%; }
         .single .route-info .single-bottom .right-side:last-child {
           margin-right: 0; }
+        .single .route-info .single-bottom .right-side .back-button {
+          float: right;
+          font-family: "Bitter", serif;
+          cursor: pointer;
+          text-align: center;
+          padding: 10px;
+          border: 1px solid #AAC19B;
+          border-radius: 4px;
+          background-color: #AAC19B;
+          color: #F1FFE8; }
+          .single .route-info .single-bottom .right-side .back-button:hover {
+            background-color: #809175;
+            border: 1px solid #809175;
+            border-radius: 4px; }
+          .single .route-info .single-bottom .right-side .back-button a {
+            color: #F1FFE8; }
+          .single .route-info .single-bottom .right-side .back-button p {
+            margin: 0; }
   .single h2 {
     font-family: "Raleway", sans-serif; }
   .single .single-image {
@@ -283,7 +358,8 @@ header {
     border-radius: 4px; }
     .single .single-image img {
       width: 100%;
-      height: auto; }
+      height: auto;
+      float: left; }
   .single form {
     overflow: hidden;
     width: 100%;
@@ -297,6 +373,8 @@ header {
     .single form p {
       display: inline-block;
       margin-right: 1em; }
+    .single form .updated-notice {
+      margin-top: 1em; }
     .single form label {
       font-size: 1.8em; }
     .single form .check {

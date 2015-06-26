@@ -3,8 +3,8 @@
   'use strict';
 
   angular.module('ClimbingRoutes')
-    .controller('RouteList', ['$scope', 'RouteService', '$filter', '$location',
-      function ($scope, RouteService, $filter, $location) {
+    .controller('RouteList', ['$scope', 'RouteService', '$filter', '$location', 'PARSE',
+      function ($scope, RouteService, $filter, $location, PARSE) {
 
         var orderBy = $filter('orderBy');
 
@@ -12,12 +12,19 @@
           $scope.routeList = data.results;
         });
 
-        $scope.stateSort = function (state) {
-          $scope.routeList = orderBy($scope.routeList, state);
+        $scope.editRoute = function (route) {
+          RouteService.editRoute(route).success( function () {
+            $('.update-submitted').html('<p>Update submitted.</p>')
+          })
+        };
+
+        $scope.sort = function(routeList, predicate) {
+          $(event.target).addClass('active');
+          $(event.target).siblings().removeClass('active');
+          $scope.routeList = _.sortBy(routeList, predicate)
         };
 
         $scope.deleteRoute = function (postToDelete) {
-          // var idToDelete = postToDelete.objectId;
           RouteService.deleteRoute(postToDelete).success(function () {
             $scope.routeList = _.without($scope.routeList, postToDelete);
           });
@@ -25,16 +32,14 @@
 
         $scope.logoutUser = function () {
           RouteService.logoutUser().success( function (data) {
-            Cookies.expire('sessionToken', data.sessionToken);
-            Cookies.expire('sessionToken', data.username);
-            console.log('clicking logout');
-
+            Cookies.expire('sessionToken');
+            PARSE.CONFIGHEADERS.headers['X-Parse-Session-Token'] = '';
             $location.path('/login');
           })
-          .error (function (user) {
-            console.log('error', user);
+          .error (function (data) {
+            console.log('error', data);
           })
-        }
+        };
 
         $scope.expand = function () {
           $(event.target).siblings().not('.top').toggleClass('hide');
@@ -45,7 +50,7 @@
           if (boolean === false) {
             return 'Not completed';
           } else {
-            return '*Completed climb - added to ticklist'
+            return 'Completed, and added to ticklist'
           }
         };
 

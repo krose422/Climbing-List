@@ -1,7 +1,50 @@
-<h2>Your Ticklist</h2>
+<section class="main">
 
-<ul>
-  <li ng-repeat="r in routeList">
-    {{ r.routename }}
-  </li>
-</ul>
+  <!-- <h2>Your Climbing Ticklist</h2> -->
+  <dl class="sub-nav">
+    <dt>Filter by:</dt>
+    <dd ng-click="sort(routeList, 'area')">Area</dd>
+    <dd ng-click="sort(routeList, 'state')">State</dd>
+    <dd ng-click="sort(routeList, 'routetype')">Type</dd>
+    <dd ng-click="sort(routeList, 'grade')">Grade</dd>
+  </dl>
+
+  <p ng-click="logoutUser()" class="logout-btn">Logout</p>
+
+
+  <ul>
+    <li class="allroutes" ng-repeat="r in routeList | orderBy:'area'" data-id="{{r.objectId}}">
+      <!-- <div class="expand" ng-click="expand()"> -->
+      <i class="fa fa-minus-square" ng-click="expand()"></i>
+      <i class="fa fa-plus-square hide" ng-click="expand()"></i>
+
+      <!-- </div> -->
+
+      <div class="top">
+        <h4 class="route-name"> {{ r.routename }} </h4>
+        <p class="route-location"><a href="http://www.mountainproject.com/scripts/Search?query={{ r.area }}&Submit=Search" target="_blank">{{ r.area }}</a> | {{ r.state }}</p>
+      </div>
+
+      <div class="bottom">
+        <div class="left-info">
+          <div class="routeimage">
+            <img ng-src=" {{ r.image }} ">
+          </div>
+        </div>
+
+        <div class="right-info">
+          <p class="route-type">{{ r.routetype }}, {{ r.grade }}</p>
+          <p class="route-beta">{{ r.beta }}</p>
+          <p><span class="completed-no completed">{{ completed(r.completed) }}</span></p>
+          <p class="mp-search"><a href="http://www.mountainproject.com/scripts/Search?query={{ r.mplink }}&Submit=Search" target="_blank">Search on Mountain Project</a></p>
+          <div class="update-submitted"></div>
+          <hr />
+          <p class="hide">Trip notes:</p><p class="route-notes">Trip notes: {{ r.tripnotes }}</p>
+          <p class="delete-route" ng-click="deleteRoute(r)">Delete</p>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
+</section>

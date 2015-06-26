@@ -77,7 +77,7 @@
 
         // Log out user
         this.logoutUser = function () {
-          return $http.post(PARSE.URL + 'logout', PARSE.CONFIGHEADERS)
+          return $http.post(PARSE.URL + 'logout', '', PARSE.CONFIGHEADERS)
         };
 
 

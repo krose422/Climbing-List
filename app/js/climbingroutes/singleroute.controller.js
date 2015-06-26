@@ -11,14 +11,12 @@
           console.log(data);
 
           $scope.editRoute = function (route) {
-            RouteService.editRoute(route)
+            RouteService.editRoute(route).success( function (data) {
+              $('.updated-notice').text('Route updated with changes.')
+            })
           };
 
         });
-
-        $scope.editRoute = function (r) {
-          RouteService.editRoute(r);
-        };
 
 
       }
