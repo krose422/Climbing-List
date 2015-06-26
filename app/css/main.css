@@ -165,7 +165,9 @@ header {
 /* MAIN PAGE
 ------------- */
 .main h2 {
-  float: left; }
+  float: left;
+  font-family: "Bitter", serif;
+  margin-left: 1.5em; }
 
 .main .logout-btn {
   cursor: pointer;
