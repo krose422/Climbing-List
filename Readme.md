@@ -1,12 +1,14 @@
-## Welcome to My Angular Project
+## Welcome to Rocklist
 
-> I am your Readme.md file, you should probably update me.
+> Rocklist is a place for climbers to add routes to be completed, and keep a running tick list of all completed climbs with trip notes.
 
 
 ## Usage
 
-This template contains some simple `gulp` tasks. They are as follows:
+This project contains bourbon, neat and foundation. Run bourbon install, neat install and bower install foundation --save to use.
 
+
+This template also contains some simple `gulp` tasks. They are as follows:
 
 - `gulp watch`: This will launch a Node Server and start the standard `watchlist` task
 - `gulp bower`: This will move the bower components into their proper location. This will run during the `watch` task, but you may need to run it manually once in a while
