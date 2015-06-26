@@ -3,8 +3,8 @@
   'use strict';
 
   angular.module('ClimbingRoutes')
-    .controller('TickList', ['$scope', 'RouteService',
-      function ($scope, RouteService) {
+    .controller('TickList', ['$scope', 'RouteService', 'PARSE', '$location',
+      function ($scope, RouteService, PARSE, $location) {
 
         // Get all completed routes
         RouteService.getRoutes().success(function (data) {
