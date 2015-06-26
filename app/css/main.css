@@ -36,10 +36,19 @@ input, button {
 
 a {
   text-decoration: none;
-  color: #AB8387; }
+  color: #9BAAC1; }
 
 ul {
   list-style: none; }
+
+button {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #AAC19B;
+  border-radius: 4px;
+  background-color: #AAC19B;
+  color: #F1FFE8; }
 
 /* HEADER & NAV BAR
 ---------- */
@@ -93,8 +102,8 @@ header {
   margin: 2em;
   padding: .5em; }
   .main .add:hover {
-    background-color: #9BAAC1;
-    border: 1px solid #9BAAC1;
+    background-color: #809175;
+    border: 1px solid #809175;
     border-radius: 4px; }
   .main .add i {
     display: inline;
@@ -153,20 +162,14 @@ header {
     .main .allroutes .left-info .routename {
       display: inline-block; }
     .main .allroutes .left-info .routeimage {
-      width: 10em;
-      height: 10em;
+      width: 15em;
+      height: 15em;
       overflow: hidden;
       margin: 10px;
       position: relative; }
       .main .allroutes .left-info .routeimage img {
-        position: absolute;
-        left: -100%;
-        right: -100%;
-        top: -100%;
-        bottom: -100%;
-        margin: auto;
-        height: auto;
-        width: auto; }
+        width: 100%;
+        position: absolute; }
   .main .allroutes .right-info {
     float: left;
     display: block;
@@ -190,7 +193,7 @@ header {
       color: #303236;
       margin-bottom: .5em; }
     .main .allroutes .right-info span {
-      color: #9BAAC1;
+      color: #C8484C;
       font-weight: bold; }
     .main .allroutes .right-info .delete-route {
       cursor: pointer;
@@ -220,4 +223,93 @@ header {
       .main .allroutes .right-info .edit-route:hover {
         background-color: #808DA1;
         border: 1px solid #808DA1;
+        border-radius: 4px; }
+
+/* SINGLE PAGE VIEW
+-------------------- */
+.single {
+  overflow: hidden;
+  width: 70%;
+  margin: 0 auto; }
+  .single .route-info {
+    padding: 2em;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #EDEEEE;
+    border-radius: 4px;
+    background-color: white;
+    margin: 2em 0; }
+    .single .route-info .single-top {
+      overflow: hidden;
+      width: 95%;
+      margin: auto; }
+      .single .route-info .single-top h2 {
+        font-family: "Bitter", serif;
+        display: inline-block;
+        float: left; }
+      .single .route-info .single-top .route-location {
+        display: inline-block;
+        float: right;
+        margin-top: 1em; }
+    .single .route-info .single-bottom {
+      max-width: 68em;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      clear: both; }
+      .single .route-info .single-bottom::after {
+        clear: both;
+        content: "";
+        display: table; }
+      .single .route-info .single-bottom .single-image {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%; }
+        .single .route-info .single-bottom .single-image:last-child {
+          margin-right: 0; }
+      .single .route-info .single-bottom .right-side {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 65.88078%; }
+        .single .route-info .single-bottom .right-side:last-child {
+          margin-right: 0; }
+  .single h2 {
+    font-family: "Raleway", sans-serif; }
+  .single .single-image {
+    overflow: hidden;
+    width: 30em;
+    border-radius: 4px; }
+    .single .single-image img {
+      width: 100%;
+      height: auto; }
+  .single form {
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #EDEEEE;
+    border-radius: 4px;
+    padding: 2em;
+    background-color: #ffffff; }
+    .single form h3 {
+      font-family: "Bitter", serif;
+      color: #AAC19B; }
+    .single form p {
+      display: inline-block;
+      margin-right: 1em; }
+    .single form label {
+      font-size: 1.8em; }
+    .single form .check {
+      overflow: hidden;
+      padding-left: 2em; }
+      .single form .check p {
+        margin-top: 1em;
+        font-size: 1.8em; }
+    .single form button {
+      clear: both;
+      float: left;
+      margin: 0.5em 1em; }
+      .single form button:hover {
+        background-color: #809175;
+        border: 1px solid #809175;
         border-radius: 4px; }

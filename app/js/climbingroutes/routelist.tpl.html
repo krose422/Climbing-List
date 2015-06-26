@@ -1,6 +1,9 @@
 <section class="main">
 
   <!-- <h2>Your Climbing Ticklist</h2> -->
+  <p ng-click="areaSort(routeList)">sort by area</p>
+  <p ng-click="stateSort(r.state)">sort by state</p>
+  <p><a href="#/ticklist">See your ticklist</a></p>
 
   <p ng-click="logoutUser()" class="logout-btn">Logout</p>
   <div class="add">
@@ -9,7 +12,7 @@
 
 
   <ul>
-    <li class="allroutes" ng-repeat="r in routeList" data-id="{{r.objectId}}">
+    <li class="allroutes" ng-repeat="r in routeList | orderBy:'area'" data-id="{{r.objectId}}">
       <!-- <div class="expand" ng-click="expand()"> -->
       <i class="fa fa-plus-square" ng-click="expand()"></i>
       <i class="fa fa-minus-square hide" ng-click="expand()"></i>
@@ -30,9 +33,8 @@
 
         <div class="right-info">
           <p class="route-type">{{ r.routetype }}, {{ r.grade }}</p>
-          <p class="see-more"><a href="#/route/{{ r.objectId }}">See more information.</a></p>
           <p class="route-beta">{{ r.beta }}</p>
-          <p>Completed: {{ completed(r.completed) }}</p>
+          <p><span class="completed-no">{{ completed(r.completed) }}</span></p>
           <p class="mp-search"><a href="http://www.mountainproject.com/scripts/Search?query={{ r.mplink }}&Submit=Search" target="_blank">Search on Mountain Project</a>
           <p class="delete-route" ng-click="deleteRoute(r)">Delete</p>
           <p class="edit-route"><a href="#/route/{{ r.objectId }}">Edit / Tick</a></p>

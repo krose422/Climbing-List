@@ -18,7 +18,6 @@
 
         $scope.editRoute = function (r) {
           RouteService.editRoute(r);
-          console.log(r);
         };
 
 
