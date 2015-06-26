@@ -40,7 +40,9 @@
           <div class="update-submitted"></div>
           <hr />
           <p class="hide">Trip notes:</p><p class="route-notes">Trip notes: {{ r.tripnotes }}</p>
-          <p class="delete-route" ng-click="deleteRoute(r)">Delete</p>
+          <p class="delete-route-tick delete-route" ng-click="deleteRoute(r)">Delete</p>
+          <p class="edit-route edit-route-tick"><a href="#/route/{{ r.objectId }}">Edit / Tick</a></p>
+
         </div>
       </div>
 

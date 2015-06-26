@@ -48,7 +48,8 @@ button {
   border: 1px solid #AAC19B;
   border-radius: 4px;
   background-color: #AAC19B;
-  color: #F1FFE8; }
+  color: #F1FFE8;
+  transition: .3s all ease; }
 
 /* HEADER & NAV BAR
 ---------- */
@@ -109,6 +110,58 @@ header {
     color: #F1FFE8;
     padding: 0; }
 
+/* LOGIN PAGE
+-------------- */
+.loginpage {
+  width: 100%;
+  height: 100vh;
+  background-color: #686E75; }
+  .loginpage .form {
+    overflow: hidden;
+    padding-top: 10em; }
+  .loginpage form {
+    width: 50%;
+    margin: auto;
+    border: 1px solid #F1FFE8;
+    border-radius: 4px;
+    padding: 2em; }
+    .loginpage form h4 {
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      color: #F1FFE8; }
+    .loginpage form button {
+      margin-right: .5em; }
+      .loginpage form button:hover {
+        background-color: #809175;
+        border: 1px solid #809175;
+        border-radius: 4px; }
+    .loginpage form .buttons {
+      overflow: hidden;
+      text-align: center; }
+
+/* ADD ROUTE PAGE
+----------------- */
+.addroute-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #686E75; }
+  .addroute-page form {
+    width: 80%;
+    margin: auto;
+    border: 1px solid #F1FFE8;
+    border-radius: 4px;
+    padding: 2em; }
+    .addroute-page form h3 {
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      color: #F1FFE8; }
+    .addroute-page form button {
+      margin-right: .5em; }
+      .addroute-page form button:hover {
+        background-color: #809175;
+        border: 1px solid #809175;
+        border-radius: 4px; }
+
 /* MAIN PAGE
 ------------- */
 .main h2 {
@@ -122,6 +175,7 @@ header {
   border-radius: 4px;
   background-color: #686E75;
   color: #F1FFE8;
+  transition: .3s all ease;
   float: right;
   margin: 0 1em 1.2em 0; }
   .main .logout-btn:hover {
@@ -180,13 +234,9 @@ header {
     font-family: "Raleway", sans-serif;
     display: inline-block;
     float: left; }
-  .main .allroutes .top .top-right {
-    overflow: hidden;
+  .main .allroutes .top .route-location {
+    display: inline-block;
     float: right; }
-    .main .allroutes .top .top-right .route-location {
-      margin-bottom: .2em; }
-    .main .allroutes .top .top-right .route-type {
-      margin-bottom: 0; }
   .main .allroutes .bottom {
     max-width: 68em;
     margin-left: auto;
@@ -238,6 +288,9 @@ header {
         background-color: #809175;
         border: 1px solid #809175;
         border-radius: 4px; }
+    .main .allroutes .right-info .route-type {
+      display: inline-block;
+      float: left; }
     .main .allroutes .right-info .see-more {
       display: inline-block;
       float: left;
@@ -260,13 +313,17 @@ header {
       border-radius: 4px;
       background-color: #C8484C;
       color: #F1FFE8;
+      transition: .3s all ease;
       opacity: .6;
       float: right;
       margin-left: 1em;
-      padding: 3px;
+      padding: 10px;
       margin-bottom: 0; }
       .main .allroutes .right-info .delete-route:hover {
         opacity: 1; }
+    .main .allroutes .right-info .delete-route-tick {
+      padding: 3px;
+      margin-bottom: 0; }
     .main .allroutes .right-info .edit-route {
       opacity: .6;
       cursor: pointer;
@@ -276,11 +333,15 @@ header {
       border-radius: 4px;
       background-color: #9BAAC1;
       color: #F1FFE8;
+      transition: .3s all ease;
       float: right; }
       .main .allroutes .right-info .edit-route a {
         color: #F1FFE8; }
       .main .allroutes .right-info .edit-route:hover {
         opacity: 1; }
+    .main .allroutes .right-info .edit-route-tick {
+      padding: 3px;
+      margin-bottom: 0; }
 
 /* SINGLE PAGE VIEW
 -------------------- */
@@ -341,7 +402,8 @@ header {
           border: 1px solid #AAC19B;
           border-radius: 4px;
           background-color: #AAC19B;
-          color: #F1FFE8; }
+          color: #F1FFE8;
+          transition: .3s all ease; }
           .single .route-info .single-bottom .right-side .back-button:hover {
             background-color: #809175;
             border: 1px solid #809175;

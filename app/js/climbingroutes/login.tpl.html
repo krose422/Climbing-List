@@ -1,6 +1,14 @@
-<form class="login">
-  <input type="text" class="username" ng-model="user.username" placeholder="Username">
-  <input type="password" class="password" ng-model="user.password" placeholder="Password">
-  <button ng-click="loginUser(user)">Login</button>
-  <button ng-click="addUser(user)">Register</button>
-</form>
+<div class="loginpage">
+<div class="form">
+
+  <form class="login">
+  <h4>Login or Register</h4>
+    <input type="text" class="username" ng-model="user.username" placeholder="Username">
+    <input type="password" class="password" ng-model="user.password" placeholder="Password">
+    <div class="buttons">
+      <button ng-click="loginUser(user)">Login</button>
+      <button ng-click="addUser(user)">Register</button>
+    </div>
+  </form>
+</div>
+</div>

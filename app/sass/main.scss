@@ -38,6 +38,7 @@ $raleway: 'Raleway', sans-serif;
   @include border($color);
   background-color: $color;
   color: $light;
+  @include transition;
   // width: 5em;
   // float: right;
 }
@@ -181,6 +182,76 @@ header {
   }
 }
 
+/* LOGIN PAGE
+-------------- */
+.loginpage {
+  width: 100%;
+  height: 100vh;
+  background-color: $grey;
+
+  .form {
+    overflow: hidden;
+    padding-top: 10em;
+  }
+
+  form {
+    width: 50%;
+    margin: auto;
+    @include border($light);
+    padding: 2em;
+
+    h4 {
+      text-align: center;
+      font-family: $raleway;
+      color: $light;
+    }
+
+    button {
+      margin-right: .5em;
+
+      &:hover {
+        background-color: $darkgreen;
+        @include border($darkgreen);
+      }
+    }
+
+    .buttons {
+      overflow: hidden;
+      text-align: center;
+    }
+  }
+}
+
+/* ADD ROUTE PAGE
+----------------- */
+.addroute-page {
+  width: 100%;
+  height: 100vh;
+  background-color: $grey;
+
+    form {
+    width: 80%;
+    margin: auto;
+    @include border($light);
+    padding: 2em;
+
+    h3 {
+      text-align: center;
+      font-family: $raleway;
+      color: $light;
+    }
+
+    button {
+      margin-right: .5em;
+
+      &:hover {
+        background-color: $darkgreen;
+        @include border($darkgreen);
+      }
+    }
+
+  }
+}
 
 /* MAIN PAGE
 ------------- */
@@ -269,19 +340,9 @@ header {
         display: inline-block;
         float: left;
       }
-
-      .top-right {
-        overflow: hidden;
+      .route-location {
+        display: inline-block;
         float: right;
-
-        .route-location {
-          margin-bottom: .2em;
-        }
-
-        .route-type {
-          margin-bottom: 0;
-        }
-
       }
     }
 
@@ -336,6 +397,11 @@ header {
         }
       }
 
+      .route-type {
+        display: inline-block;
+        float: left;
+      }
+
       .see-more {
         display: inline-block;
         float: left;
@@ -365,12 +431,17 @@ header {
         opacity: .6;
         float: right;
         margin-left: 1em;
-        padding: 3px;
+        padding: 10px;
         margin-bottom: 0;
 
         &:hover {
           opacity: 1;
         }
+      }
+
+      .delete-route-tick {
+        padding: 3px;
+        margin-bottom: 0;
       }
 
       .edit-route {
@@ -385,6 +456,12 @@ header {
           opacity: 1;
         }
       }
+
+      .edit-route-tick {
+        padding: 3px;
+        margin-bottom: 0;
+      }
+
     }
   }
 }
